@@ -1,0 +1,110 @@
+<ion-view view-title="{{home}}">  
+  <ion-content> 
+  <style>
+    table {
+    border: 1px solid #fff;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ th , td  {
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  padding: 5px; text-align: center;
+}
+i {
+  margin-right: 5px; color: #aaa;
+}
+
+@media screen and (max-width: 415px) {
+
+    table {
+        border: 0;
+    }
+
+    table thead {
+        display: none;
+    }
+    
+
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 2px solid #fff;
+    }
+
+    table td {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+
+</style>
+
+
+  <div class="item item-text-wrap" >
+    <h1 style="color: green; font-size:150%; font-weight: bold;  text-align:center" >{{editarperfil}}</h1>  
+  </div>
+
+
+  <div class="item item-text-wrap">
+
+    <form name="formCadastro">
+      <h2 name="datadia" style="color: green; text-align:left; font-weight: bold;" ng-model="cadastro.datadia"> Hoje: {{today | date:'dd/MM/yyyy'}}<h2/>
+
+      <div class="item item-text-wrap">
+      <h3 style="font-weight: bold;  text-align:center" >{{editarperfil1}}</h3>
+      <label class="item item-input"  >
+        <i class="icon ion-ios-contact"></i>
+        <input type="text" placeholder="Digite seu nome aqui" name="nome" ng-model="cadastro.nome" >
+        <span class="assertive" ng-show="formCadastro.nome.$invalid && formCadastro.nome.$dirty">Pereencha o campo nome corretamente!</span>
+      </label>
+
+      <label class="item item-input">
+         <i class="icon ion-ios-telephone"></i>
+         <input type="tel" placeholder="Digite seu telefone aqui" name="tel" ng-model="cadastro.tel">
+        <span class="assertive" ng-show="formCadastro.tel.$invalid && formCadastro.tel.$dirty">Telefone inválido</span>                
+    </label>       
+
+      <label class="item item-input">  
+      <i class="icon ion-email"></i>     
+        <input type="email" placeholder="Digite seu Email aqui"  name="email" ng-model="cadastro.email" >
+        <span class="assertive" ng-show="formCadastro.email.$invalid && formCadastro.email.$dirty">Pereencha o campo email corretamente!</span>
+      </label>
+
+    </div></br>  
+
+   
+    </form>
+    <div class="item item-text-wrap">
+
+      
+    <button ion-button class="button button-full button-balanced" ng-click="showPopup()">Salvar</button>    
+
+    <button ion-button class="button button-full button-balanced" ng-click="remover(cadastro)">Cancelar</button>  
+
+
+      </div>
+
+
+    </div>
+  </ion-content>
+</ion-view>

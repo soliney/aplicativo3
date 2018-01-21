@@ -1,0 +1,317 @@
+<ion-view view-title="{{home}}">  
+  <ion-content> 
+  <style>
+    table {
+    border: 1px solid #fff;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ th , td  {
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  padding: 5px; text-align: center;
+}
+i {
+  margin-right: 5px; color: #aaa;
+}
+
+@media screen and (max-width: 415px) {
+
+    table {
+        border: 0;
+    }
+
+    table thead {
+        display: none;
+    }
+    
+
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 2px solid #fff;
+    }
+
+    table td {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+
+</style>
+
+
+  <div class="item item-text-wrap" >
+    <h1 style="color: green; font-size:150%; font-weight: bold;  text-align:center" >{{pesquisa1}}</h1>  
+  </div>
+
+<div class="item item-text-wrap">
+  <h2 style="color: green; text-align:center; font-weight: bold;" >{{pesquisa2}}</h2> 
+</div>
+
+  <div class="item item-text-wrap">
+
+    <form name="formCadastro">
+      <h2 name="datadia" style="color: green; text-align:left; font-weight: bold;" ng-model="cadastro.datadia"> Hoje: {{today | date:'dd/MM/yyyy'}}<h2/>
+
+      <div class="item item-text-wrap">
+      <h3 style="font-weight: bold;  text-align:center" >{{identidade}}</h3>
+      <label class="item item-input"  >
+        <i class="icon ion-ios-contact"></i>
+        <input type="text" placeholder="Digite seu nome aqui" name="nome" ng-model="cadastro.nome" >
+        <span class="assertive" ng-show="formCadastro.nome.$invalid && formCadastro.nome.$dirty">Pereencha o campo nome corretamente!</span>
+      </label>
+
+      <label class="item item-input">
+         <i class="icon ion-ios-telephone"></i>
+         <input type="tel" placeholder="Digite seu telefone aqui" name="tel" ng-model="cadastro.tel">
+        <span class="assertive" ng-show="formCadastro.tel.$invalid && formCadastro.tel.$dirty">Telefone inválido</span>                
+    </label>       
+
+      <label class="item item-input">  
+      <i class="icon ion-email"></i>     
+        <input type="email" placeholder="Digite seu Email aqui"  name="email" ng-model="cadastro.email" >
+        <span class="assertive" ng-show="formCadastro.email.$invalid && formCadastro.email.$dirty">Pereencha o campo email corretamente!</span>
+      </label>
+
+
+
+
+
+    </div></br>  
+    <h2 style="color: green; text-align:center;" >{{pesquisa3}}</h2>
+
+</br>      
+
+        <div class="list" >
+
+     
+<div class="item item-text-wrap">
+
+       <table> 
+      
+  <tr>
+
+    <h2>{{pergunta1}}</h2>      
+    <td  style="color: #000; font-weight: bold; background-color:blue;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Não Responder" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1">Não Responder</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:red;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input class="checkbox1" type="radio" name="resposta1" value="Muito Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" >Muito Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:orange;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" >Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:yellow;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" >Satisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:green;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Muito Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" ng-required="true">Muito Satisfeito</br></br>
+    </label>
+  </label></td> 
+  </tr>
+</table>
+</div> </br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta2}}</h2>      
+    <td  style="color: #000; font-weight: bold; background-color:blue;"><label>
+    <label class="checkbox checkbox-dark" ></br>
+    <input type="radio" name="resposta2" value="Não Responder" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2">Não Responder</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:red;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta2" value="Muito Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" >Muito Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:orange;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta2" value="Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" >Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:yellow;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta2" value="Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" >Satisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:green;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta2" value="Muito Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" ng-required="true">Muito Satisfeito</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta3}}</h2>      
+    <td  style="color: #000; font-weight: bold; background-color:blue;"><label>
+    <label class="checkbox checkbox-dark" ></br>
+    <input type="radio" name="resposta3" value="Não Responder" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3">Não Responder</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:red;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta3" value="Muito Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" >Muito Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:orange;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta3" value="Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" >Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:yellow;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta3" value="Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" >Satisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:green;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta3" value="Muito Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" ng-required="true">Muito Satisfeito</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta4}}</h2>      
+    <td  style="color: #000; font-weight: bold; background-color:blue;"><label>
+    <label class="checkbox checkbox-dark" ></br>
+    <input type="radio" name="resposta4" value="Não Responder" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4">Não Responder</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:red;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta4" value="Muito Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" >Muito Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:orange;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta4" value="Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" >Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:yellow;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta4" value="Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" >Satisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:green;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta4" value="Muito Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" ng-required="true">Muito Satisfeito</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta5}}</h2>      
+    <td  style="color: #000; font-weight: bold; background-color:blue;"><label>
+    <label class="checkbox checkbox-dark" ></br>
+    <input type="radio" name="resposta5" value="Não Responder" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5">Não Responder</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:red;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta5" value="Muito Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" >Muito Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:orange;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta5" value="Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" >Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:yellow;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta5" value="Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" >Satisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:green;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta5" value="Muito Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" ng-required="true">Muito Satisfeito</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta6}}</h2>      
+    <td  style="color: #000; font-weight: bold; background-color:blue;"><label>
+    <label class="checkbox checkbox-dark" ></br>
+    <input type="radio" name="resposta6" value="Não Responder" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6">Não Responder</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:red;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta6" value="Muito Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" >Muito Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:orange;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta6" value="Insatisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" >Insatisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:yellow;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta6" value="Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" >Satisfeito</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #000; font-weight: bold; background-color:green;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta6" value="Muito Satisfeito" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" ng-required="true">Muito Satisfeito</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+   
+    </form>
+    <div class="item item-text-wrap">
+    <button class="button button-full button-balanced" ng-disabled="formCadastro.$invalid" ng-click="cadastroRespostas(cadastro); abreModal(); " onclick="location.href='#/menu/perguntas_seq';" href="#/app/cadastro">Enviar</button>    
+      </div>
+
+
+    </div>
+  </ion-content>
+</ion-view>

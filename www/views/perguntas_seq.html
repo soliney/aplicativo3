@@ -1,0 +1,300 @@
+<ion-view view-title="{{home}}">
+
+ <ion-content> 
+
+ <style>
+    table {
+    border: 1px solid #fff;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ th , td  {
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  padding: 5px; text-align: center;
+}
+i {
+  margin-right: 5px; color: #aaa;
+}
+
+@media screen and (max-width: 415px) {
+
+    table {
+        border: 0;
+    }
+
+    table thead {
+        display: none;
+    }
+    
+
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 2px solid #fff;
+    }
+
+    table td {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+
+</style>
+  <div class="item item-text-wrap" >
+    <h1 style="color: green; font-size:150%; font-weight: bold;  text-align:center" >{{pesquisa_seq1}}</h1>  
+  </div>
+
+<div class="item item-text-wrap">
+  <h2 style="color: green; text-align:center; font-weight: bold;" >{{pesquisa_seq2}}</h2> 
+</div>
+
+  <div class="item item-text-wrap">
+  <h2 style="color: green; text-align:center;" >{{pesquisa_seq3}}</h2>
+
+
+</br>
+
+    <form name="formCadastro">
+      <h2 name="datadia" style="color: green; text-align:left; font-weight: bold;" ng-model="cadastro.datadia"> Hoje: {{today | date:'dd/MM/yyyy'}}<h2/>
+
+      <div class="item item-text-wrap">
+      <h4 style="font-weight: bold;  text-align:center" >{{identidade1}}</h4>
+      <label class="item item-input"  >
+        <i class="icon ion-ios-contact"></i>
+        <input type="text" placeholder="Digite seu nome aqui" name="nome" ng-model="cadastro.nome" >
+        <span class="assertive" ng-show="formCadastro.nome.$invalid && formCadastro.nome.$dirty">Pereencha o campo nome corretamente!</span>
+      </label></div></br>
+      
+    <div class="list" >
+
+     
+<div class="item item-text-wrap">
+
+       <table> 
+      
+  <tr>
+
+    <h2>{{pergunta_seq1}}</h2>      
+    <td  style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Médio incompleto" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" >Médio Incompleto</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Médio completo" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" >Médio Completo</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Superior incompleto" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" >Superior Incompleto</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Superior completo" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" >Superior Completo</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="resposta1" value="Nenhuma das anteriores" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta1" ng-required="true">Nenhuma das Anteriores</br></br>
+    </label>
+  </label></td> 
+  </tr>
+</table>
+</div> </br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta_seq2}}</h2>      
+    <td  style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta2" value="1 Salário mínimo" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" >1 Salário Mínimo</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta2" value="2 Salários mínimos" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" >2 Salários Mínimos</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta2" value="3 Salários mínimos" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" >3 Salários Mínimos</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+   <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta2" value="4 Salários mínimos" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" >4 Salários Mínimos</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta2" value="Menos de 1 Salário mínimo" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta2" ng-required="true">Menos de 1 Salário</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta_seq3}}</h2>      
+    <td  style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta3" value="Em casa apenas" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" >Em Casa Apenas</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta3" value="Apenas no trabalho" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" >Apenas no Trabalho</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta3" value="Apenas no telefone" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" >Apenas no Telefone</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta3" value="Na casa de amigo" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" >Na Casa de Amigo</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta3" value="Nunca acesso a internet" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta3" ng-required="true">Nunca Acesso a Internet</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta_seq4}}</h2>      
+    <td  style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta4" value="Em casa apenas" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" >Em Casa Apenas</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta4" value="Em indústria" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" >Em Industria</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta4" value="Na zona rural" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" >Na Zona Rural</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta4" value="No comércio" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" > No Comércio</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+   <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta4" value="Estou desempregado" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta4" ng-required="true">Estou sem empregado</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta_seq5}}</h2>      
+    <td  style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta5" value="Ocasionalmente" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" >De vez em quando</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta5" value="2 vezes ao ano" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" >2 Vezes ao Ano</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta5" value="pelo menos 5 vezes ao ano" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" >Pelo Menos 5 Vezes ao Ano</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta5" value="Mais de 6 vezes ao ano" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" >Mais de 6 Vezes ao Ano</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta5" value="É a primeira vez que preciso" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta5" ng-required="true">É a 1ª Vez que Preciso</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+
+<div class="item item-text-wrap">
+       <table>      
+  <tr>
+    <h2>{{pergunta_seq6}}</h2>      
+    <td  style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta6" value="Casa própria" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" > Casa Própria </br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta6" value="Aluguel" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" > Casa Alugada</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta6" value="Casa cedida" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" > Casa Cedida</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta6" value="Caseiro de propriedade" style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" >Caseiro de Propriedade</br></br>
+    </label>
+  </label></td><td></td>
+    <td style="color: #fff; font-weight: bold; background-color:grey;"><label>
+    <label class="checkbox checkbox-dark"></br>
+    <input type="radio" name="pergunta6" value="Casa de programa de gov." style="margin-left:auto; margin-right:auto;" ng-model="cadastro.pergunta6" ng-required="true">Casa de Programa de Governo</br></br>
+    </label>
+  </label></td>
+  </tr>
+</table>
+</div></br>
+    </form>
+    <div class="item item-text-wrap">
+    <button href="#" class="button button-full button-balanced" ng-disabled="formCadastro.$invalid" ng-click="cadastroSegmentacao(cadastro); abreModal1();" onclick="location.href='#/menu/home';">Enviar</button>
+
+   
+    </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
